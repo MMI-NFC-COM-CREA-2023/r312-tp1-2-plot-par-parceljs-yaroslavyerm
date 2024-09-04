@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>My First Parcel App</title>
+      <link rel="stylesheet" href="styles.css" />
+    
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p>this is my parcel website</p>
+    <div id="myplot"></div>
+    <script type="module">
+      import * as Plot from "@observablehq/plot";
+
+      const plot = Plot.rectY({ length: 10000 }, Plot.binX({ y: "count" }, { x: Math.random })).plot();
+      const div = document.querySelector("#myplot");
+      div.append(plot);
+    </script>
+  </body>
+</html>
